@@ -40,36 +40,7 @@ We interpreted the challenge as a classic regression problem where the target va
 
 Our final, champion architecture is a refined `Ridge` regression pipeline. It processes raw `catalog_content` and our custom-engineered numerical features through a parallel preprocessing pipeline (`ColumnTransformer`) before feeding them into the linear model for prediction.
 
-Input Data (catalog_content, ipq, is_bulk, is_specialty)
-           |
-+----------V-----------+
-|  ColumnTransformer   |
-+----------+-----------+
-           |
-+----------+-----------------------+
-|          |                       |
-V          V                       V
-+-------+ +----------+---------+ +----------+---------+
-| TF-IDF  | | StandardScaler   | | StandardScaler   |
-|(text)   | | (ipq)            | |(is_bulk, etc.)   |
-+-------+ +--------------------+ +--------------------+
-|          |                       |
-+----------+-----------------------+
-           |
-+----------V-----------+
-|  Concatenated Features |
-+----------+-----------+
-           |
-+----------V-----------+
-|  Ridge Regression    |
-+----------+-----------+
-           |
-+----------V-----------+
-|  Predicted log_price |
-+----------------------+
-| (Exponentiation)
-V
-Final Price
+![Architecture Diagram](wiki sumarizer/Input Data (catalog_content, ipq, is_bulk, is_specialty) - visual selection.png)
 
 ### 3.2 Model Components
 
@@ -115,3 +86,4 @@ Our final solution is a robust and interpretable Ridge regression model, whose s
 The full project notebook contains all iterative results, including performance of the multimodal LightGBM model, hyperparameter tuning logs, ensembling experiments, and the detailed error analysis that led to our final model design.
 
 ---
+
