@@ -1,7 +1,7 @@
 # ML Challenge 2025: Smart Product Pricing Solution
 
 **Team Name:** Power House
-**Team Members:** Rithik V Kumar, Veerabutharan J, vishali Vincent
+**Team Members:** Rithik V Kumar, Veerabutharan J, vishali Vincent, Suren K
 **Submission Date:** 12/10/2025
 
 ---
